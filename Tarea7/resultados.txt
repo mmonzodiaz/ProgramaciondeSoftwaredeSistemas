@@ -1,0 +1,152 @@
+Sistema operativo utilizado
+Linux debian11mate 5.10.0-13-amd64 #1 SMP Debian 5.10.106-1 (2022-03-17) x86_64 GNU/Linux
+==== run-san ====
+gcc -g -DSAN=1 -fsanitize=address -fsanitize=undefined -DSANITIZE -Wall -Werror -std=c18  fav.c test-fav.c fav.h -lm -lpthread -o fav.bin-san
+./fav.bin-san
+Test 1: Un ejemplo pequeño con nlanz=2 sum=7 rep=1000000
+Calculando en paralelo
+Semilla inicial para proceso 2085 es 1437238648
+Semilla inicial para proceso 2089 es 1554644727
+Semilla inicial para proceso 2087 es 1161644699
+Semilla inicial para proceso 2091 es 1967036887
+Semilla inicial para proceso 2088 es 556959270
+Semilla inicial para proceso 2086 es 150514766
+Semilla inicial para proceso 2090 es 1397448171
+Semilla inicial para proceso 2092 es 559743966
+Casos favorables con 125000 repeticiones para proceso 2089=20832
+Casos favorables con 125000 repeticiones para proceso 2088=20938
+Casos favorables con 125000 repeticiones para proceso 2085=20930
+Casos favorables con 125000 repeticiones para proceso 2091=20914
+Casos favorables con 125000 repeticiones para proceso 2087=20843
+Casos favorables con 125000 repeticiones para proceso 2086=21057
+Casos favorables con 125000 repeticiones para proceso 2090=20583
+Casos favorables con 125000 repeticiones para proceso 2092=21103
+fav=167200  pbb=0.167200  delta=0.000533
+Test 1 aprobado
+
+--------------------------------------------------
+
+Test 2: Un ejemplo grande con nlanz=10 sum=30 rep=10000000
+Precalentando secuencialmente
+Semilla inicial para proceso 2084 es 559743966
+Casos favorables con 20000 repeticiones para proceso 2084=969
+fav=969 pbb=0.048450
+Calculando secuencialmente con rep=2000000
+Semilla inicial para proceso 2084 es 559743966
+Casos favorables con 2000000 repeticiones para proceso 2084=97504
+Tiempo= 313, fav=97504 pbb=0.048752
+
+-----
+Calculando en paralelo con rep=2000000, intento 1
+Semilla inicial para proceso 2101 es 1538958466
+Semilla inicial para proceso 2102 es 824176890
+Semilla inicial para proceso 2103 es 779183362
+Semilla inicial para proceso 2104 es 2115846899
+Casos favorables con 500000 repeticiones para proceso 2103=24170
+Casos favorables con 500000 repeticiones para proceso 2101=24072
+Casos favorables con 500000 repeticiones para proceso 2102=24092
+Casos favorables con 500000 repeticiones para proceso 2104=24223
+Tiempo= 142  speedup= 2.20423  fav=96557  pbb=0.048279  delta=0.009712
+Test 2 aprobado
+
+Felicitaciones: su tarea funciona
+==== run-g ====
+gcc -g -Wall -Werror -std=c18  fav.c test-fav.c fav.h -lm -lpthread -o fav.bin-g
+./fav.bin-g
+Test 1: Un ejemplo pequeño con nlanz=2 sum=7 rep=1000000
+Calculando en paralelo
+Semilla inicial para proceso 2128 es 331287822
+Semilla inicial para proceso 2127 es 870405094
+Semilla inicial para proceso 2129 es 1822921072
+Casos favorables con 125000 repeticiones para proceso 2128=20923
+Casos favorables con 125000 repeticiones para proceso 2127=20831
+Semilla inicial para proceso 2130 es 1918783216
+Semilla inicial para proceso 2131 es 549669065
+Casos favorables con 125000 repeticiones para proceso 2129=20908
+Semilla inicial para proceso 2132 es 1921050457
+Semilla inicial para proceso 2133 es 1968825245
+Semilla inicial para proceso 2134 es 1856315669
+Casos favorables con 125000 repeticiones para proceso 2132=21006
+Casos favorables con 125000 repeticiones para proceso 2134=20865
+Casos favorables con 125000 repeticiones para proceso 2130=20846
+Casos favorables con 125000 repeticiones para proceso 2131=20974
+Casos favorables con 125000 repeticiones para proceso 2133=20691
+fav=167044  pbb=0.167044  delta=0.000377
+Test 1 aprobado
+
+--------------------------------------------------
+
+Test 2: Un ejemplo grande con nlanz=10 sum=30 rep=10000000
+Precalentando secuencialmente
+Semilla inicial para proceso 2126 es 1856315669
+Casos favorables con 200000 repeticiones para proceso 2126=9751
+fav=9751 pbb=0.048755
+Calculando secuencialmente con rep=20000000
+Semilla inicial para proceso 2126 es 1856315669
+Casos favorables con 20000000 repeticiones para proceso 2126=970723
+Tiempo= 1280, fav=970723 pbb=0.048536
+
+-----
+Calculando en paralelo con rep=20000000, intento 1
+Semilla inicial para proceso 2136 es 1703071811
+Semilla inicial para proceso 2139 es 1238491642
+Semilla inicial para proceso 2137 es 310032402
+Semilla inicial para proceso 2138 es 2069814077
+Casos favorables con 5000000 repeticiones para proceso 2137=242843
+Casos favorables con 5000000 repeticiones para proceso 2139=242518
+Casos favorables con 5000000 repeticiones para proceso 2136=242536
+Casos favorables con 5000000 repeticiones para proceso 2138=242222
+Tiempo= 502  speedup= 2.5498  fav=970119  pbb=0.048506  delta=0.000622
+Test 2 aprobado
+
+Felicitaciones: su tarea funciona
+==== run ====
+gcc -O -DOPT=1 -Wall -Werror -std=c18  fav.c test-fav.c fav.h -lm -lpthread -o fav.bin
+./fav.bin
+Test 1: Un ejemplo pequeño con nlanz=2 sum=7 rep=1000000
+Calculando en paralelo
+Semilla inicial para proceso 2156 es 234030293
+Semilla inicial para proceso 2157 es 1235597296
+Semilla inicial para proceso 2159 es 791712450
+Casos favorables con 125000 repeticiones para proceso 2156=20798
+Semilla inicial para proceso 2161 es 456630288
+Casos favorables con 125000 repeticiones para proceso 2157=20889
+Semilla inicial para proceso 2160 es 186376850
+Casos favorables con 125000 repeticiones para proceso 2159=20889
+Semilla inicial para proceso 2162 es 1548878541
+Casos favorables con 125000 repeticiones para proceso 2161=20712
+Semilla inicial para proceso 2158 es 1992685538
+Semilla inicial para proceso 2163 es 680633817
+Casos favorables con 125000 repeticiones para proceso 2158=20853
+Casos favorables con 125000 repeticiones para proceso 2163=20899
+Casos favorables con 125000 repeticiones para proceso 2160=20873
+Casos favorables con 125000 repeticiones para proceso 2162=20661
+fav=166574  pbb=0.166574  delta=0.000093
+Test 1 aprobado
+
+--------------------------------------------------
+
+Test 2: Un ejemplo grande con nlanz=10 sum=30 rep=10000000
+Precalentando secuencialmente
+Semilla inicial para proceso 2155 es 680633817
+Casos favorables con 200000 repeticiones para proceso 2155=9700
+fav=9700 pbb=0.048500
+Calculando secuencialmente con rep=20000000
+Semilla inicial para proceso 2155 es 680633817
+Casos favorables con 20000000 repeticiones para proceso 2155=967739
+Tiempo= 517, fav=967739 pbb=0.048387
+
+-----
+Calculando en paralelo con rep=20000000, intento 1
+Semilla inicial para proceso 2167 es 1014091594
+Semilla inicial para proceso 2168 es 204790603
+Semilla inicial para proceso 2169 es 265984769
+Semilla inicial para proceso 2170 es 215433267
+Casos favorables con 5000000 repeticiones para proceso 2167=241588
+Casos favorables con 5000000 repeticiones para proceso 2169=242218
+Casos favorables con 5000000 repeticiones para proceso 2168=243331
+Casos favorables con 5000000 repeticiones para proceso 2170=241534
+Tiempo= 204  speedup= 2.53431  fav=968671  pbb=0.048434  delta=0.000963
+Test 2 aprobado: speedup >= 1.5x
+
+Felicitaciones: su tarea funciona
